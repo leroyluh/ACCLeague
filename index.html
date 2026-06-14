@@ -137,6 +137,204 @@ a{color:var(--text);}
 hr{border-color:rgba(255,255,255,.08);}
 </style>
 
+
+<style>
+/* ===== AESTHETIC UPGRADE ===== */
+
+/* Smoother page background with subtle gradient */
+body {
+  background: linear-gradient(160deg, #111110 0%, #0d0d0c 100%) !important;
+}
+
+/* Hero — deeper, more dramatic */
+.hero {
+  background: linear-gradient(180deg, #1c1b19 0%, #141312 100%) !important;
+  border-bottom: 3px solid var(--color-red) !important;
+  padding: 3.5rem 2rem 3rem !important;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(226,27,47,0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+/* Nav — slightly frosted */
+nav {
+  background: rgba(15,14,13,0.92) !important;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255,255,255,0.07) !important;
+}
+
+/* Section titles — cleaner with red glow hint */
+.section-title {
+  font-size: .7rem !important;
+  letter-spacing: .22em !important;
+  color: var(--color-red) !important;
+  text-shadow: 0 0 18px rgba(226,27,47,0.3);
+}
+
+/* Cards — richer surfaces with subtle glow */
+.rule-card, .bonus-card, .assists-col, .penalty-card, .att-card {
+  background: #1a1917 !important;
+  border: 1px solid rgba(255,255,255,0.07) !important;
+  border-radius: 12px !important;
+  transition: border-color 200ms ease, box-shadow 200ms ease;
+}
+.rule-card:hover, .bonus-card:hover, .penalty-card:hover {
+  border-color: rgba(226,27,47,0.3) !important;
+  box-shadow: 0 0 24px rgba(226,27,47,0.06) !important;
+}
+
+/* Bonus cards — icon sizing */
+.bonus-icon { font-size: 1.8rem !important; }
+.bonus-title { font-size: 1.05rem !important; }
+
+/* Stats grid — cleaner separation */
+.stats-grid, .attendance-grid {
+  border-radius: 12px !important;
+  border: 1px solid rgba(255,255,255,0.07) !important;
+}
+.stat-card, .att-card {
+  background: #1a1917 !important;
+}
+.stat-value {
+  font-size: 2.2rem !important;
+  color: #fff !important;
+}
+
+/* Points table — better row contrast */
+.points-table tr:hover td,
+.rule-table tr:hover td {
+  background: rgba(255,255,255,0.025);
+}
+
+/* Track rows */
+.track-row {
+  background: #1a1917 !important;
+}
+.track-row:hover {
+  background: #201f1d !important;
+}
+
+/* Calendar table rows */
+table tbody tr:hover td {
+  background: rgba(255,255,255,0.025);
+  transition: background 150ms ease;
+}
+
+/* Penalty cards — red left accent */
+.penalty-card {
+  border-left: 3px solid var(--color-red) !important;
+  border-radius: 10px !important;
+}
+
+/* Signup banner — stronger gradient */
+.signup-bar, [style*="background:#c0392b"], [style*="background:#e21b2f"],
+[style*="background: #e21b2f"], [style*="background: #c0392b"] {
+  background: linear-gradient(90deg, #c01020 0%, #e21b2f 50%, #c01020 100%) !important;
+  letter-spacing: .12em;
+}
+
+/* Attendance highlight card */
+.att-card.highlight {
+  background: rgba(226,27,47,0.12) !important;
+  border: 1px solid rgba(226,27,47,0.35) !important;
+}
+.att-rounds { color: var(--color-red) !important; }
+
+/* Footer */
+footer {
+  background: transparent !important;
+  border-top: 1px solid rgba(255,255,255,0.06) !important;
+  padding: 2rem 1.5rem !important;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #0f0e0d; }
+::-webkit-scrollbar-thumb { background: #2e2d2b; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--color-red); }
+</style>
+
+
+<style>
+/* ===== SECTION TITLE + BODY TEXT SIZE UPGRADE ===== */
+
+.section-title {
+  font-size: 1rem !important;
+  letter-spacing: .18em !important;
+  margin-bottom: 1.5rem !important;
+  padding-bottom: .65rem !important;
+}
+
+/* General body text in sections */
+.section p,
+.section li,
+.section span,
+.penalty-desc,
+.bonus-desc,
+.note,
+.rule-table td,
+.points-table td,
+.assist-row,
+.track-country {
+  font-size: .95rem !important;
+  line-height: 1.65 !important;
+}
+
+/* Bonus & penalty card titles */
+.bonus-title,
+.penalty-title {
+  font-size: 1.15rem !important;
+}
+
+/* Stat labels */
+.stat-label {
+  font-size: .78rem !important;
+  letter-spacing: .1em !important;
+}
+
+/* Stat values */
+.stat-value {
+  font-size: 2.4rem !important;
+}
+
+/* Track names */
+.track-name {
+  font-size: 1.3rem !important;
+}
+
+/* Attendance grid */
+.att-rounds {
+  font-size: 1.8rem !important;
+}
+.att-pts {
+  font-size: .88rem !important;
+}
+
+/* Points / rule table */
+.rule-table td:first-child {
+  font-size: .92rem !important;
+}
+.rule-table td:last-child {
+  font-size: .95rem !important;
+}
+
+/* Calendar table */
+table thead th {
+  font-size: .85rem !important;
+  letter-spacing: .1em !important;
+}
+table tbody td {
+  font-size: .95rem !important;
+}
+</style>
+
 </head>
 <body>
 <nav>
@@ -182,7 +380,7 @@ hr{border-color:rgba(255,255,255,.08);}
  </div>
 
  <div class="section">
-  <div class="section-title"> Event Format</div>
+  <div class="section-title"> Race Weekend Structure</div>
   <div class="rule-card">
    <table class="rule-table">
     <tr><td>Day</td><td>Weekly races, same track for 2 weeks</td></tr>
@@ -389,7 +587,7 @@ hr{border-color:rgba(255,255,255,.08);}
 </div>
 
 </div>
-<footer>SGF1HUB 2026</footer>
+
 
 
 
