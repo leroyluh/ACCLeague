@@ -186,7 +186,7 @@ hr{border-color:rgba(255,255,255,.08);}
   <div class="rule-card">
    <table class="rule-table">
     <tr><td>Day</td><td>Weekly races, same track for 2 weeks</td></tr>
-    <tr><td>Start time</td><td>10:00 PM (standard)</td></tr>
+    <tr><td>Start time</td><td>TBC (standard)</td></tr>
     <tr><td>Free Practice</td><td>10 minutes</td></tr>
     <tr><td>Qualifying</td><td>15 minutes</td></tr>
     <tr><td>Week 1</td><td>Free Practice, Qualifying, 25-minute Sprint</td></tr>
@@ -199,7 +199,7 @@ hr{border-color:rgba(255,255,255,.08);}
   </div>
   <div class="note">
    <span class="note-icon"></span>
-   <span>On weekends where F1 qualifying starts at or before 10:00 PM, the league session will be moved earlier. Round start times will be confirmed in advance each week.</span>
+   <span>On weekends where F1 qualifying starts at or before TBC, the league session will be moved earlier. Round start times will be confirmed in advance each week.</span>
   </div>
  </div>
 
@@ -392,24 +392,85 @@ hr{border-color:rgba(255,255,255,.08);}
 <footer>SGF1HUB 2026</footer>
 
 
-<script>
-(function(){
- var r1 = new Date('2026-06-27T22:00:00+08:00');
- function update(){
-  var now = new Date();
-  var diff = r1 - now;
-  var el = document.getElementById('countdown-text');
-  if(!el) return;
-  if(diff <= 0){ el.textContent = ' Season 2 is LIVE!'; return; }
-  var d = Math.floor(diff/86400000);
-  var h = Math.floor((diff%86400000)/3600000);
-  var m = Math.floor((diff%3600000)/60000);
-  var s = Math.floor((diff%60000)/1000);
-  el.textContent = 'Season 2 starts in ' + d + 'd ' + h + 'h ' + m + 'm ' + s + 's';
- }
- update();
- setInterval(update, 1000);
-})();
-</script>
+
+
+<div class="section">
+  <div class="section-title">Season 2 Calendar</div><p style="font-size:0.78rem;opacity:0.6;margin:0 0 0.75rem;letter-spacing:.04em;">* Dates to be confirmed via community poll.</p>
+  <table style="width:100%;border-collapse:collapse;font-family:'Barlow Condensed',sans-serif;">
+    <thead>
+      <tr style="border-bottom:1px solid rgba(255,255,255,0.12);text-transform:uppercase;font-size:.78rem;letter-spacing:.1em;color:rgba(255,255,255,.5);">
+        <th style="padding:.6rem .5rem;text-align:left;">Round</th>
+        <th style="padding:.6rem .5rem;text-align:left;">Date</th>
+        <th style="padding:.6rem .5rem;text-align:left;">Circuit</th>
+        <th style="padding:.6rem .5rem;text-align:left;">Time (SGT)</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+      <tr style="border-bottom:1px solid rgba(255,255,255,0.06);">
+        <td style="padding:.65rem .5rem;font-weight:700;">R1</td>
+        <td style="padding:.65rem .5rem;">TBD</td>
+        <td style="padding:.65rem .5rem;">Brands Hatch</td>
+        <td style="padding:.65rem .5rem;">TBC</td>
+        
+      </tr>
+      <tr style="border-bottom:1px solid rgba(255,255,255,0.06);">
+        <td style="padding:.65rem .5rem;font-weight:700;">R2</td>
+        <td style="padding:.65rem .5rem;">TBD</td>
+        <td style="padding:.65rem .5rem;">Brands Hatch</td>
+        <td style="padding:.65rem .5rem;">TBC</td>
+        
+      </tr>
+      <tr style="border-bottom:1px solid rgba(255,255,255,0.06);">
+        <td style="padding:.65rem .5rem;font-weight:700;">R3</td>
+        <td style="padding:.65rem .5rem;">TBD</td>
+        <td style="padding:.65rem .5rem;">Silverstone</td>
+        <td style="padding:.65rem .5rem;">TBC</td>
+        
+      </tr>
+      <tr style="border-bottom:1px solid rgba(255,255,255,0.06);">
+        <td style="padding:.65rem .5rem;font-weight:700;">R4</td>
+        <td style="padding:.65rem .5rem;">TBD</td>
+        <td style="padding:.65rem .5rem;">Silverstone</td>
+        <td style="padding:.65rem .5rem;">TBC</td>
+        
+      </tr>
+      
+      <tr style="border-bottom:1px solid rgba(255,255,255,0.06);">
+        <td style="padding:.65rem .5rem;font-weight:700;">R5</td>
+        <td style="padding:.65rem .5rem;">TBD</td>
+        <td style="padding:.65rem .5rem;">Misano</td>
+        <td style="padding:.65rem .5rem;">TBC</td>
+        
+      </tr>
+      <tr style="border-bottom:1px solid rgba(255,255,255,0.06);">
+        <td style="padding:.65rem .5rem;font-weight:700;">R6</td>
+        <td style="padding:.65rem .5rem;">TBD</td>
+        <td style="padding:.65rem .5rem;">Misano</td>
+        <td style="padding:.65rem .5rem;">TBC</td>
+        
+      </tr>
+      <tr style="border-bottom:1px solid rgba(255,255,255,0.06);">
+        <td style="padding:.65rem .5rem;font-weight:700;">R7</td>
+        <td style="padding:.65rem .5rem;">TBD</td>
+        <td style="padding:.65rem .5rem;">Monza</td>
+        <td style="padding:.65rem .5rem;">TBC</td>
+        
+      </tr>
+      <tr>
+        <td style="padding:.65rem .5rem;font-weight:700;">R8</td>
+        <td style="padding:.65rem .5rem;">TBD</td>
+        <td style="padding:.65rem .5rem;">Monza</td>
+        <td style="padding:.65rem .5rem;">TBC</td>
+        
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+
+
+
 </body>
 </html>
