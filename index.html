@@ -335,6 +335,20 @@ table tbody td {
 }
 </style>
 
+
+<style>
+.rounds-grid{display:flex;flex-direction:column;gap:.6rem}
+.round-card{display:grid;grid-template-columns:3.5rem 1fr auto;align-items:center;gap:1rem;background:var(--color-surface,#1a1917);border:1px solid rgba(255,255,255,0.07);border-radius:12px;padding:1rem 1.25rem;transition:border-color 200ms ease,box-shadow 200ms ease}
+.round-card:hover{border-color:rgba(226,27,47,0.35);box-shadow:0 0 20px rgba(226,27,47,0.08)}
+.round-num{font-family:'Barlow Condensed',sans-serif;font-size:1.7rem;font-weight:800;color:var(--color-red,#e21b2f);line-height:1;text-align:center}
+.round-info{}
+.round-track{font-family:'Barlow Condensed',sans-serif;font-size:1.15rem;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:var(--color-text,#f0ece6)}
+.round-country{font-size:.78rem;color:var(--color-text-muted,rgba(240,236,230,0.55));margin-top:.15rem}
+.round-meta{text-align:right}
+.round-date{font-family:'Barlow Condensed',sans-serif;font-size:1rem;font-weight:700;color:var(--color-text-muted,rgba(240,236,230,0.55));letter-spacing:.04em}
+.round-time{font-size:.72rem;color:var(--color-text-muted,rgba(240,236,230,0.4));margin-top:.1rem;letter-spacing:.08em;text-transform:uppercase}
+@media(max-width:600px){.round-card{grid-template-columns:2.8rem 1fr auto;padding:.85rem 1rem}.round-num{font-size:1.3rem}.round-track{font-size:1rem}}
+</style>
 </head>
 <body>
 <nav>
@@ -593,77 +607,98 @@ table tbody td {
 
 
 <div class="section">
-  <div class="section-title">  📅 Season 2 Calendar</div><p style="font-size:0.78rem;opacity:0.6;margin:0 0 0.75rem;letter-spacing:.04em;">* Dates to be confirmed via community poll.</p>
-  <table style="width:100%;border-collapse:collapse;font-family:'Barlow Condensed',sans-serif;">
-    <thead>
-      <tr style="border-bottom:1px solid rgba(255,255,255,0.12);text-transform:uppercase;font-size:.78rem;letter-spacing:.1em;color:rgba(255,255,255,.5);">
-        <th style="padding:.6rem .5rem;text-align:left;">Round</th>
-        <th style="padding:.6rem .5rem;text-align:left;">Date</th>
-        <th style="padding:.6rem .5rem;text-align:left;">Circuit</th>
-        <th style="padding:.6rem .5rem;text-align:left;">Time (SGT)</th>
-        
-      </tr>
-    </thead>
-    <tbody>
-      <tr style="border-bottom:1px solid rgba(255,255,255,0.06);">
-        <td style="padding:.65rem .5rem;font-weight:700;">R1</td>
-        <td style="padding:.65rem .5rem;">TBD</td>
-        <td style="padding:.65rem .5rem;">Brands Hatch</td>
-        <td style="padding:.65rem .5rem;">TBC</td>
-        
-      </tr>
-      <tr style="border-bottom:1px solid rgba(255,255,255,0.06);">
-        <td style="padding:.65rem .5rem;font-weight:700;">R2</td>
-        <td style="padding:.65rem .5rem;">TBD</td>
-        <td style="padding:.65rem .5rem;">Brands Hatch</td>
-        <td style="padding:.65rem .5rem;">TBC</td>
-        
-      </tr>
-      <tr style="border-bottom:1px solid rgba(255,255,255,0.06);">
-        <td style="padding:.65rem .5rem;font-weight:700;">R3</td>
-        <td style="padding:.65rem .5rem;">TBD</td>
-        <td style="padding:.65rem .5rem;">Silverstone</td>
-        <td style="padding:.65rem .5rem;">TBC</td>
-        
-      </tr>
-      <tr style="border-bottom:1px solid rgba(255,255,255,0.06);">
-        <td style="padding:.65rem .5rem;font-weight:700;">R4</td>
-        <td style="padding:.65rem .5rem;">TBD</td>
-        <td style="padding:.65rem .5rem;">Silverstone</td>
-        <td style="padding:.65rem .5rem;">TBC</td>
-        
-      </tr>
-      
-      <tr style="border-bottom:1px solid rgba(255,255,255,0.06);">
-        <td style="padding:.65rem .5rem;font-weight:700;">R5</td>
-        <td style="padding:.65rem .5rem;">TBD</td>
-        <td style="padding:.65rem .5rem;">Misano</td>
-        <td style="padding:.65rem .5rem;">TBC</td>
-        
-      </tr>
-      <tr style="border-bottom:1px solid rgba(255,255,255,0.06);">
-        <td style="padding:.65rem .5rem;font-weight:700;">R6</td>
-        <td style="padding:.65rem .5rem;">TBD</td>
-        <td style="padding:.65rem .5rem;">Misano</td>
-        <td style="padding:.65rem .5rem;">TBC</td>
-        
-      </tr>
-      <tr style="border-bottom:1px solid rgba(255,255,255,0.06);">
-        <td style="padding:.65rem .5rem;font-weight:700;">R7</td>
-        <td style="padding:.65rem .5rem;">TBD</td>
-        <td style="padding:.65rem .5rem;">Monza</td>
-        <td style="padding:.65rem .5rem;">TBC</td>
-        
-      </tr>
-      <tr>
-        <td style="padding:.65rem .5rem;font-weight:700;">R8</td>
-        <td style="padding:.65rem .5rem;">TBD</td>
-        <td style="padding:.65rem .5rem;">Monza</td>
-        <td style="padding:.65rem .5rem;">TBC</td>
-        
-      </tr>
-    </tbody>
-  </table>
+  <div class="section-title">  📅 Season 2 Calendar</div>
+<p style="font-size:0.85rem;opacity:0.6;margin:0 0 1.25rem;letter-spacing:.04em;">* Dates to be confirmed via community poll.</p>
+<div class="rounds-grid">
+  <div class="round-card">
+    <div class="round-num">R1</div>
+    <div class="round-info">
+      <div class="round-track">Brands Hatch</div>
+      <div class="round-country">🇬🇧 United Kingdom</div>
+    </div>
+    <div class="round-meta">
+      <div class="round-date">TBD</div>
+      <div class="round-time">TBC SGT</div>
+    </div>
+  </div>
+  <div class="round-card">
+    <div class="round-num">R2</div>
+    <div class="round-info">
+      <div class="round-track">Brands Hatch</div>
+      <div class="round-country">🇬🇧 United Kingdom</div>
+    </div>
+    <div class="round-meta">
+      <div class="round-date">TBD</div>
+      <div class="round-time">TBC SGT</div>
+    </div>
+  </div>
+  <div class="round-card">
+    <div class="round-num">R3</div>
+    <div class="round-info">
+      <div class="round-track">Silverstone</div>
+      <div class="round-country">🇬🇧 United Kingdom</div>
+    </div>
+    <div class="round-meta">
+      <div class="round-date">TBD</div>
+      <div class="round-time">TBC SGT</div>
+    </div>
+  </div>
+  <div class="round-card">
+    <div class="round-num">R4</div>
+    <div class="round-info">
+      <div class="round-track">Silverstone</div>
+      <div class="round-country">🇬🇧 United Kingdom</div>
+    </div>
+    <div class="round-meta">
+      <div class="round-date">TBD</div>
+      <div class="round-time">TBC SGT</div>
+    </div>
+  </div>
+  <div class="round-card">
+    <div class="round-num">R5</div>
+    <div class="round-info">
+      <div class="round-track">Misano</div>
+      <div class="round-country">🇮🇹 Italy</div>
+    </div>
+    <div class="round-meta">
+      <div class="round-date">TBD</div>
+      <div class="round-time">TBC SGT</div>
+    </div>
+  </div>
+  <div class="round-card">
+    <div class="round-num">R6</div>
+    <div class="round-info">
+      <div class="round-track">Misano</div>
+      <div class="round-country">🇮🇹 Italy</div>
+    </div>
+    <div class="round-meta">
+      <div class="round-date">TBD</div>
+      <div class="round-time">TBC SGT</div>
+    </div>
+  </div>
+  <div class="round-card">
+    <div class="round-num">R7</div>
+    <div class="round-info">
+      <div class="round-track">Monza</div>
+      <div class="round-country">🇮🇹 Italy</div>
+    </div>
+    <div class="round-meta">
+      <div class="round-date">TBD</div>
+      <div class="round-time">TBC SGT</div>
+    </div>
+  </div>
+  <div class="round-card">
+    <div class="round-num">R8</div>
+    <div class="round-info">
+      <div class="round-track">Monza</div>
+      <div class="round-country">🇮🇹 Italy</div>
+    </div>
+    <div class="round-meta">
+      <div class="round-date">TBD</div>
+      <div class="round-time">TBC SGT</div>
+    </div>
+  </div>
+</div>
 </div>
 
 
