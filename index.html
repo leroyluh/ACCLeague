@@ -410,7 +410,7 @@ table tbody td {
 </nav>
 
 <div id="countdown-bar" style="background:#1a1917;border-bottom:1px solid #2e2d2b;padding:.6rem 2rem;text-align:center;font-family:'Barlow Condensed',sans-serif;font-size:.95rem;letter-spacing:.08em;text-transform:uppercase;color:#888582">
-  <span id="countdown-text">Loading...</span>
+  <span style="color:#555;margin-right:.6rem;font-size:.78rem;letter-spacing:.15em">NEXT RACE</span><span id="countdown-text" style="color:#e0ddd8">Loading...</span>
 </div>
 <div style="background:var(--color-red);padding:1rem 2rem;text-align:center;position:sticky;top:57px;z-index:99">
  <a href="https://forms.gle/xZQtobqy1YorbBCH8" target="_blank"
@@ -479,7 +479,7 @@ table tbody td {
     <div class="stat-card"><div class="stat-value" style="color:var(--color-red)">Tyres</div><div class="stat-label">Must Change</div></div>
     <div class="stat-card"><div class="stat-value" style="color:var(--color-red)">+60s</div><div class="stat-label">Missed Stop</div></div>
   </div>
-  <p style="margin-top:1rem;color:#9a9893;font-size:.88rem;line-height:1.5;">1 mandatory pit stop per race. The pit window is open from the <strong style="color:#f0ece6;">5:00</strong> to the <strong style="color:#f0ece6;">65:00</strong> mark. A tyre change <strong style="color:#f0ece6;">must</strong> be performed — a drive-through with no service does not count. Fuel top-up is at the driver's discretion. Failure to complete a valid stop results in a <strong style="color:var(--color-red);">+60 second time penalty</strong> added to the final race result.</p>
+  <p style="margin-top:1rem;color:#9a9893;font-size:.88rem;line-height:1.5;">1 mandatory pit stop per race. The pit window is open from the <strong style="color:#f0ece6;">5:00</strong> to the <strong style="color:#f0ece6;">65:00</strong> mark. Tyre change required. Missed stop = <strong style="color:var(--color-red);">+60s penalty</strong>.</p>
 </div>
 
 <div class="section">
@@ -516,11 +516,9 @@ table tbody td {
         <span style="font-size:.75rem;color:#8a8884;text-transform:uppercase;letter-spacing:.12em">70 MIN</span>
       </div>
       <table style="width:100%;border-collapse:collapse;font-size:.95rem">
-        <thead>
-          <tr style="color:#9a9893;text-align:left;border-bottom:1px solid #2a2825">
-            <th style="padding:.5rem 0">Pos</th><th style="padding:.5rem 0;text-align:right">Pts</th>
-          </tr>
-        </thead>
+        <thead><tr style="color:#9a9893;text-align:left;border-bottom:1px solid #2a2825">
+          <th style="padding:.5rem 0">Pos</th><th style="padding:.5rem 0;text-align:right">Pts</th>
+        </tr></thead>
         <tbody>
           <tr><td style="padding:.45rem 0">1st</td><td style="padding:.45rem 0;text-align:right;color:#e21b2f;font-weight:800">15</td></tr>
           <tr><td style="padding:.45rem 0">2nd</td><td style="padding:.45rem 0;text-align:right">12</td></tr>
@@ -537,7 +535,6 @@ table tbody td {
     </div>
   </div>
 </div>
-
   <div style="margin-top:2rem;margin-bottom:1rem;background:linear-gradient(135deg,#1a1917,#101820);border:1px solid #1a3a4a;border-radius:14px;padding:1.4rem 1.4rem;display:flex;align-items:flex-start;gap:1.2rem">
     <span style="font-size:2rem;flex-shrink:0"></span>
     <div>
@@ -555,7 +552,7 @@ table tbody td {
     <div class="bonus-card"><div class="bonus-icon">🥇</div><div><div class="bonus-title">Pole Position</div><div class="bonus-desc">Fastest time in qualifying sets pole. Awarded regardless of race result.</div><div style="margin-top:.5rem;font-family:'Barlow Condensed',sans-serif;font-size:1.4rem;font-weight:800;color:var(--color-red)">+1 pt</div></div></div>
     <div class="bonus-card"><div class="bonus-icon">✨</div><div><div class="bonus-title">Clean Race</div><div class="bonus-desc">≤2 ACC incidents, no successful protest, no in-race penalties.</div><div style="margin-top:.5rem;font-family:'Barlow Condensed',sans-serif;font-size:1.4rem;font-weight:800;color:var(--color-red)">+2 pts</div></div></div>
   </div>
-  <p style="margin-top:1rem;color:#9a9893;font-size:.85rem;line-height:1.5;">Bonuses stack with championship points. Most Positions Gained requires a minimum of 3 positions gained from qualifying grid to finish. Max bonus per round: <strong style="color:#f0ece6;">+6 pts</strong>.</p>
+  <p style="margin-top:1rem;color:#9a9893;font-size:.85rem;line-height:1.5;">Max bonus per round: <strong style="color:#f0ece6;">+6 pts</strong>.</p>
 </div>
 
 <div class="section">
@@ -587,10 +584,6 @@ table tbody td {
     </div>
   </div>
 </div>
-
-</div>
-
-
 
 
 
@@ -668,3 +661,52 @@ table tbody td {
 </div>
 
 
+</div>
+<script>
+(function() {
+  // Race dates: Fridays at 22:00 SGT (UTC+8) = 14:00 UTC
+  var races = [
+    { date: new Date('2026-07-10T14:00:00Z'), name: 'R1 — Brands Hatch' },
+    { date: new Date('2026-07-24T14:00:00Z'), name: 'R2 — Misano' },
+    { date: new Date('2026-08-07T14:00:00Z'), name: 'R3 — Barcelona' },
+    { date: new Date('2026-08-21T14:00:00Z'), name: 'R4 — Monza' },
+    { date: new Date('2026-09-04T14:00:00Z'), name: 'R5 — Nürburgring' },
+    { date: new Date('2026-09-18T14:00:00Z'), name: 'R6 — Silverstone' }
+  ];
+
+  function getNextRace() {
+    var now = new Date();
+    for (var i = 0; i < races.length; i++) {
+      if (races[i].date > now) return races[i];
+    }
+    return null;
+  }
+
+  function pad(n) { return n < 10 ? '0' + n : n; }
+
+  function tick() {
+    var el = document.getElementById('countdown-text');
+    if (!el) return;
+    var next = getNextRace();
+    if (!next) {
+      el.textContent = 'Season 2 Complete — See You Next Season 🏆';
+      return;
+    }
+    var diff = next.date - new Date();
+    if (diff <= 0) {
+      el.textContent = next.name + ' — Race is LIVE 🔴';
+      return;
+    }
+    var d = Math.floor(diff / 86400000);
+    var h = Math.floor((diff % 86400000) / 3600000);
+    var m = Math.floor((diff % 3600000) / 60000);
+    var s = Math.floor((diff % 60000) / 1000);
+    el.textContent = next.name + '  ·  ' + d + 'd ' + pad(h) + 'h ' + pad(m) + 'm ' + pad(s) + 's';
+  }
+
+  document.addEventListener('DOMContentLoaded', function() {
+    tick();
+    setInterval(tick, 1000);
+  });
+})();
+</script>
