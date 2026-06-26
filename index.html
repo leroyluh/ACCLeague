@@ -509,7 +509,7 @@ table tbody td {
 
  <div class="section">
   <div class="section-title">🏆 Championship Points</div>
-  <div style="display:grid;grid-template-columns:1fr;max-width:420px;gap:1rem;align-items:start">
+  <div style="display:grid;grid-template-columns:1fr;max-width:420px;gap:1rem;align-items:start;margin:0 auto">
     <div style="background:#12110f;border:1px solid #2a2825;border-radius:14px;padding:1rem">
       <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:.75rem">
         <strong style="font-family:'Barlow Condensed',sans-serif;letter-spacing:.08em;text-transform:uppercase">SPRINT+</strong>
@@ -575,13 +575,7 @@ table tbody td {
         <div style="color:#9a9893;font-size:.88rem">−1 championship point for every 3 incidents accumulated across the season. Rounded down (e.g. 7 incidents = −2 pts). Tracked separately from the per-round 🧼 Clean Race bonus.</div>
       </div>
     </div>
-    <div style="background:linear-gradient(135deg,#1a1917,#1e0808);border:1px solid #3a1010;border-radius:14px;padding:1.1rem 1.2rem;display:flex;align-items:flex-start;gap:1rem">
-      <span style="font-size:2rem;flex-shrink:0"></span>
-      <div>
-        <div style="font-family:'Barlow Condensed',sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:.08em;margin-bottom:.3rem">  🚫 Pit Window Violation</div>
-        <div style="color:#9a9893;font-size:.88rem">+30 seconds added to race result for pitting before Lap 3 or after the 50-minute mark. Applied manually by admin before standings are published.</div>
-      </div>
-    </div>
+    
   </div>
 </div>
 
@@ -729,6 +723,23 @@ table tbody td {
   document.addEventListener('DOMContentLoaded', function() { tick(); setInterval(tick, 1000); });
 })();
 </script>
+
+<style>
+/* New sections aesthetic alignment */
+.page .section .rule-card {
+  background: #1a1917 !important;
+  border: 1px solid rgba(255,255,255,0.07) !important;
+  border-radius: 12px !important;
+}
+.page .section .rule-table td:first-child {
+  color: var(--color-text-muted);
+  font-size: .92rem;
+}
+.page .section .rule-table td:last-child {
+  color: var(--color-text);
+  font-size: .95rem;
+}
+</style>
 
 <div class="page">
 
